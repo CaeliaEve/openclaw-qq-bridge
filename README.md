@@ -16,6 +16,7 @@ This repository packages a production-ready bridge that connects QQ (OneBot V11)
 - `bot.py`: NoneBot bridge logic
 - `Dockerfile`: bridge image build
 - `docker-compose.yml`: bridge runtime
+- `install.sh`: one-command installer/start script
 - `requirements.txt`: Python dependencies
 - `.env.example`: env template (no secrets)
 - `openclaw.template.json`: OpenClaw config template (no secrets)
@@ -26,7 +27,14 @@ This repository packages a production-ready bridge that connects QQ (OneBot V11)
 2. Copy `openclaw.template.json` to `~/.openclaw/openclaw.json` and fill your values.
 3. Prepare bridge folder and copy this repo.
 4. Create `.env` from `.env.example` and fill your tokens/URLs.
-5. Start bridge:
+5. Start bridge with one command:
+
+```bash
+chmod +x install.sh
+./install.sh
+```
+
+Alternative manual start:
 
 ```bash
 docker compose up -d --build
