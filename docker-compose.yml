@@ -1,0 +1,13 @@
+services:
+  nonebot:
+    build: .
+    container_name: nonebot-openclaw
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+    volumes:
+      - /root/.openclaw/workspace:/root/.openclaw/workspace:ro
+      - /tmp/openclaw-share:/tmp/openclaw-share:ro
+      - /root/.openclaw/agents/main/sessions:/root/.openclaw/agents/main/sessions
